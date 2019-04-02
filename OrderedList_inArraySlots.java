@@ -9,41 +9,38 @@ Features needed:
 
 public class OrderedList_inArraySlots {
 
-    private List_inArraySlots orderList;
+    private List_inArraySlots orderedList;
 
     // constructor
     public OrderedList_inArraySlots() {
-        orderList = new List_inArraySlots();
+        orderedList = new List_inArraySlots();
     }
 
     //add
     public void add( int value) {
         int index = findIndex(value);
-        orderList.add(index,value);
+        orderedList.add(index,value);
     }
 
     //size
     public int size() {
-        return orderList.size();
+        return orderedList.size();
     }
 
     //toString
     public String toString() {
-        return "" + orderList;
+        return "" + orderedList;
     }
 
     private int findIndex( int value) {
-        int correctIndex = 0;
-        if (orderList.size() == 0) return 0;
+        if (orderedList.size() == 0) return 0;
         else {
-            for (int index = orderList.size() - 1; index != 0; index--){
-                if (value < orderList.get(index) ) {
-                    correctIndex = index;
-                    index = 0;
-                }
+            for (int index = 0; index < orderedList.size(); index++){
+                if (value < orderedList.get(index) )
+                    return index;
             }
         }
-        return correctIndex;
+        return orderedList.size();
     }
 
 }

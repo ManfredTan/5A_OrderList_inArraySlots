@@ -18,7 +18,10 @@ public class UserOfOrderedList {
 
         list.add(2);
         list.add(5);
-        System.out.println(list);
+        list.add(7);
+        list.add(0);
+        System.out.println("Expected list: " + System.lineSeparator() + "[0,1,2,2,3,4,5,5,6,7,]" + System.lineSeparator()
+                        + "Returned list: " + System.lineSeparator() + list);
 
     }
 }
